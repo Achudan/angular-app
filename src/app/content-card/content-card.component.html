@@ -1,0 +1,13 @@
+<ng-container *ngIf='card_assets'>
+<div class="master-card" (click)="onCardClick()" *ngIf="card_assets">
+    <div class="card-title">{{ card_assets.description }} card!</div>
+    <ng-content></ng-content>
+    <div class="card-desc">{{ card_assets.longDescription }}</div>
+    <div class="tags" [ngSwitch]="card_assets.category">
+        <div class="tag" *ngSwitchCase="'BEGINNER'">#begineer</div>
+        <div class="tag" *ngSwitchCase="'INTERMEDIATE'">#intermediate</div>
+        <div class="tag" *ngSwitchCase="'ADVANCED'">#advanced</div>
+        <div class="tag" *ngSwitchDefault>#All Levels</div>
+    </div>
+</div>
+</ng-container>
