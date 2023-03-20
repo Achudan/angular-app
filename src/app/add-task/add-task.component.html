@@ -1,0 +1,21 @@
+<div class="form-container">
+    <h2 class="section-title">Add New Task</h2>
+    <form [formGroup]="addTaskFormGroup" (ngSubmit)="onSubmit()">
+        <div>
+            <input placeholder="Task Title" [formControl]="titleControl" required>
+        </div>
+        <div>
+            <input placeholder="Task Description" [formControl]="descControl">
+        </div>
+        <div>
+            <input placeholder="Select Date" [formControl]="dateControl" type="date">
+        </div>
+        <div>
+            <textarea placeholder="Enter the task details" [formControl]="detailsControl" maxlength="500"></textarea>
+        </div>
+
+        <button class="submit-btn" type="submit">
+            Add
+        </button>
+    </form>
+</div>

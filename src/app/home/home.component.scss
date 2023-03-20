@@ -1,0 +1,13 @@
+content-card{
+    max-width: 400px;
+    margin: 50px auto;
+    
+}
+
+:host{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
+}

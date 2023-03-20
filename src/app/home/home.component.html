@@ -1,0 +1,3 @@
+<content-card *ngFor="let card of card_assets" [card_assets]="card" (cardClicked)="cardClicked($event)">
+    <content-image *ngIf="card" [image_src]="card.iconUrl"></content-image>
+</content-card>

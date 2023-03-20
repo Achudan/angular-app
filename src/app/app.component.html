@@ -1,8 +1,6 @@
 
 <div class="content" role="main">
- <content-card *ngFor="let card of card_assets" [card_assets]="card" (cardClicked)="cardClicked($event)">
-    <content-image *ngIf="card" [image_src]="card.iconUrl"></content-image>
- </content-card> 
+  <app-header></app-header>
 </div>
 
 <router-outlet></router-outlet>
