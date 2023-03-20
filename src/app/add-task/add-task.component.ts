@@ -8,16 +8,16 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AddTaskComponent implements OnInit{
 
-  titleControl:FormControl =  new FormControl('', [Validators.required]);
-  descControl:FormControl =  new FormControl();
-  dateControl:FormControl =  new FormControl('', [Validators.required]);
-  detailsControl:FormControl =  new FormControl();
+  // titleControl:FormControl =  new FormControl('', [Validators.required]);
+  // descControl:FormControl =  new FormControl();
+  // dateControl:FormControl =  new FormControl('', [Validators.required]);
+  // detailsControl:FormControl =  new FormControl();
 
   addTaskFormGroup:FormGroup = new FormGroup(
-    { title:this.titleControl,
-      desc:this.descControl,
-      date:this.dateControl,
-      details:this.detailsControl}
+    { title:new FormControl('', [Validators.required]),
+      desc:new FormControl(),
+      date:new FormControl('', [Validators.required]),
+      details:new FormControl()}
   )
 
   addTaskForm!: FormGroup;
@@ -26,24 +26,24 @@ export class AddTaskComponent implements OnInit{
     throw new Error('Method not implemented.');
   }
 
-  get title(){
-    return this.addTaskFormGroup.get('title');
+  get titleControl(){
+    return this.addTaskFormGroup.get('title') as FormControl;
   }
 
-  get date(){
-    return this.addTaskFormGroup.get('date');
+  get dateControl(){
+    return this.addTaskFormGroup.get('date') as FormControl;
   }
 
-  get description(){
-    return this.addTaskFormGroup.get('desc');
+  get descControl(){
+    return this.addTaskFormGroup.get('desc') as FormControl;
   }
 
-  get details(){
-    return this.addTaskFormGroup.get('details');
+  get detailsControl(){
+    return this.addTaskFormGroup.get('details') as FormControl;
   }
 
   onSubmit(){
-    console.log(this.date?.value);
+    console.log(this.dateControl?.value);
   }
 
 }
